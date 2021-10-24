@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title> JQuery Test  </title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type = "text/javascript">
+
+		    // ready func call when document is ready to render
+         $(document).ready(function() 
+         {     
+               // fade in
+               $('#btnfadeHide').click(function(){
+                  $('#bdy').fadeIn("fast"); // we can add fast slow              
+               });
+
+               // fade out with Call Back Func
+               $('#btnfadeShow').click(function(){
+                  $('#bdy').fadeOut("slow", function(){ // Call Back Func
+                     alert("Tag is Hide");
+                  });               
+               });
+               // fade Toggle
+               $('#btnfadeToggle').click(function(){
+                  $('#bdy').fadeToggle("5000"); // we can add miliseconds time              
+               });
+               // fade To fadeTo( speed, transaparancy % 0 to 1, call back func)
+               $('#btnfadeTo').click(function(){
+                  $('#bdy').fadeTo("slow",0.5, function(){
+                     alert("Fade To Complted till 0.5")
+                  });               
+               });
+              
+         });
+     </script>
+<head>
+   <body>
+   <div id="bdy" class="bdyclass" style="background-color: palegreen;">
+      <h1> JQuery Information</h1>
+      <p>jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.</p>
+   </div>
+   <button id="btnfadeHide"> Fade In </button> 
+   <button id="btnfadeShow"> Fade Out </button> 
+   <button id="btnfadeToggle"> Fade Toggle </button> 
+   <button id="btnfadeTo"> Fade To </button> 
+</body>
+</html>
